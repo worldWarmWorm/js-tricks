@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+
+    
+    <script>
+        // регулярное выражение состоит из паттерна и флагов
+        // new RegExp('pattern', 'flags'); // первый способ записи
+
+        // // /pattern/flags - второй способ записи
+
+        // let ans = prompt('Insert username');
+        // let reg = /n/;
+
+        // console.log(ans.search(reg)); // если ввести имя Anna, возвращает букву n на позиции 1. метод search ижет только первое совпадение
+
+        // // i - флаг регистра
+        // // g - флаг глобальности, ищет все вхождения
+        // // m - флаг многострочности
+
+        // let reg = /n/i;
+        // console.log(ans.search(reg)); // найдет букву n вне зависимости от регистра
+
+        // let reg = /n/g;
+        // let reg = /n/gi;
+        // console.log(ans.match(reg)); // метод match позволяет использовать флаг g, ищет все вхождения в виде массива с описанием позиции.
+
+        // let pass = prompt('insert passward');
+        // console.log(pass.replace(/./g, '*')); // точка значит, что мы будем искать или заменять все символы в строке
+
+        // alert('12-32-56'.replace(/-/g, ':')); // заменяет все дефисы на двоеточия
+
+        // у самих регулярных выражений тоже бывают методы
+        // let ans = prompt('Insert username');
+        // let reg = /n/gi;
+        // console.log(reg.test(ans));
+
+        // классы символов
+        // \d - цифры \D - не цифры
+        // \w - буквы \W - не буквы
+        // \s - пробелы \S - не пробелы
+
+        // let ans = prompt('insert a number');
+        // let reg = /\d/g;
+
+        // console.log(ans.match(reg));
+
+        // let str = 'my name is R2D2';
+        // console.log(str.match(/\w\d\w\d/i)); // найдет R2D2 с началом позиции первого элемента строки
+
+        let str = 'my name is/// R2D2';
+
+        console.log(str.match(/\./gi)); // второй слэш является обратным экранирующим, найдет все /
+    </script>
+</body>
+</html>
