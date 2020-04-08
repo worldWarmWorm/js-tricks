@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // ===================== ES5 ======================
+
+        // function User(name, id) {
+        //     this.name = name;
+        //     this.id = id;
+        //     this.human = true;
+        //     this.hello = function() {
+        //         console.log('Hello! ' + this.name)
+        //     }
+        // } // функция конструктор, с помощью нее мы можем создавать новые объекты, пример ниже.
+
+        // User.prototype.exit = function(name) {
+        //     console.log('User ' + this.name + ' is gone 5 minuts ago')
+        // } // прототипно наследуемая функция
+
+        // let ivan = new User('Ivan', 25);
+        // let alex = new User('Alex', 20);
+
+        // console.log(ivan); // выводит объект ivan
+        // console.log(alex); // выводит объект alex
+        // console.log(ivan.hello()); // выводит "Hello! Ivan"
+
+        // alex.exit();
+
+
+        // =================== ES6 =====================
+
+        // class User {
+        //     constructor(name, id) {
+        //         this.name = name;
+        //         this.id = id;
+        //         this.human = true;
+        //     }
+        //     hello() {
+        //         console.log(`Hello! ${this.name}`);
+        //     }
+        //     exit() {
+        //         console.log(`User ${this.name} has gone 5 minuts ago`);
+        //     }
+        // }
+
+        // let ivan = new User('Mike', 24),
+        //     alex = new User('Alex', 49);
+
+        // console.log(ivan);
+        // console.log(alex);
+        // ivan.exit();
+        // alex.hello();
+
+        class Options {
+            constructor(height, width, bg, fontSize, textAlign) {
+                this.height = height;
+                this.width = width;
+                this.bg = bg;
+                this.fontSize = fontSize;
+                this.textAlign = textAlign;
+            }
+            createDiv() {
+                let newElem = document.createElement('div');
+                document.body.appendChild(newElem);
+                let param = 
+                    `
+                        height: ${this.height}px;
+                        width: ${this.width}px;
+                        background: ${this.bg};
+                        fontSize: ${this.fontSize}px;
+                        textAlign: ${this.textAlign};
+                    `
+                newElem.style.cssText = param;
+            }
+        }
+
+        const item = new Options(300, 400, '#eee', 20, 'center');
+
+        item.createDiv();
+
+    </script>
+</body>
+</html>

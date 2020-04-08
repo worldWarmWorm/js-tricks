@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // localStorage.setItem('number', 1); // создает новую пару ключ - значение
+        // console.log(localStorage.getItem('number')); // получаем значение
+        // localStorage.removeItem('number'); // удаляем пару ключ - значение
+        // localStorage.clear(); // удаление всех данных из объекта
+
+        window.addEventListener("DOMContentLoaded", function() {
+            let checkbox = document.getElementById("rememberMe"),
+                change = document.getElementById("change"),
+                form = document.getElementsByTagName("form")[0];
+
+            if (localStorage.getItem("isChecked") === "true") {
+                checkbox.checked = true;
+            }
+
+            if (localStorage.getItem("bg") === "changed") {
+                form.style.backgroundColor = "#ff4766";
+            }
+
+            checkbox.addEventListener("click", function() {
+                localStorage.setItem("isChecked", true);
+            });
+
+            change.addEventListener("click", function() {
+                localStorage.setItem("bg", "changed");
+                form.style.backgroundColor = "#ff4766";
+            })
+
+            let persone = {
+                name: "Alex",
+                age: 25,
+                tech: ["mobile", "notebook"]
+            }
+
+            let serializedPerson = JSON.stringify(persone);
+            localStorage.setItem("Alex", serializedPerson);
+            console.log(JSON.parse(localStorage.getItem("Alex")));
+        });
+
+        // урок 38
+
+    </script>
+</body>
+</html>

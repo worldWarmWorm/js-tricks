@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let drink = 0;
+
+        function shoot(arrow) {
+            console.log('you maked shoot...');
+            let promise = new Promise(function (resolve, reject) {
+                setTimeout(function () {
+                    Math.random() > .5 ? resolve({}) : reject('you missed');
+                }, 3000)
+            });
+            return promise;
+        } // made promise
+
+        function win() {
+            console.log('you are winner!');
+            (drink == 1) ? buyBeer() : giveMoney();
+        }
+
+        function buyBeer() {
+            console.log('that beer is for you!');
+        }
+
+        function giveMoney() {
+            console.log('you just received some money')
+        }
+
+        function loose() {
+            console.log('you loose:(');
+        }
+
+        shoot({})
+            .then(mark => console.log('you hit the target!'))
+            .then(win)
+            .catch(loose);
+    </script>
+</body>
+
+</html>

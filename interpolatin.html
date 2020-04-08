@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+    <script>
+        let name = 'Ivan',
+            age = 30,
+            mail = 'ex@mail.ru';
+
+        document.write('user ' + name + ' is' + age + ' years old. His mail address is ' + mail);
+        document.write(`<hr><br> user ${name} is ${age} years old. His mail address is ${mail}.`)
+
+
+        // если использовать директиву var в цикле, то она не будет создаваться заново в каждой итерации, она будет одна на весь цикл, в отличие от директивы let
+
+    </script>
+</body>
+</html>

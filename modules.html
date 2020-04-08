@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //  1-й способ создания модуля - используем анонимную самовызывающуюся функцию
+        // let number = 1;
+
+        // (function () {
+        //     let number = 2;
+        //     console.log(number)
+        //     return console.log(number + 3);
+        // }()) // () самовызов функции
+
+        // console.log(number);
+
+
+        //  2-й способ создания модуля - используем объектный интерфейс
+        // let user = (function () {
+        //     let privat = function () {
+        //         console.log('i am private');
+        //     }
+
+        //     return {
+        //         sayHello: function () {
+        //             console.log('HELLO!')
+        //         }
+        //     }
+        // }())
+
+        // console.log(user)
+        // console.log(user.sayHello());
+
+
+        //  3-й способ создания модуля - отличие от 2-го: все методы сделаны приватными
+
+        let user = (function () {
+            let privat = function () {
+                console.log('i am private');
+            }
+
+            let sayHello = function () {
+                console.log('HELLO!')
+            }
+
+            return {
+                hello: sayHello
+            }
+        }())
+
+        console.log(user)
+        console.log(user.hello());
+    </script>
+</body>
+
+</html>

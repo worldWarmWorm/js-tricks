@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function User(name, age) {
+            this.name = name;
+            // this.age = age;
+            let userAge = age;
+            this.say = function() {
+                console.log(`User's name is ${this.name}, age is ${userAge}`)
+            }
+            this.getAge = function() {
+                return userAge;
+            }
+
+            this.setAge = function(age) {
+                if(typeof age === 'number' && age > 0 && age < 110) {
+                    userAge = age;
+                } else {
+                    console.log('invalid value');
+                }
+            }
+        }
+
+        let ivan = new User('ivan', 25);
+        console.log(ivan.name); // запрос имени напрямую у объекта
+        console.log(ivan.userAge); // запрос возраста напрямую у объекта - не получилось
+        console.log(ivan.getAge()); // получаем возраст методом getAge()
+        ivan.setAge(30); // меняем возраст методом setAge()
+        console.log(ivan.getAge()); // смотрим измененный возраст
+        
+        ivan.say()
+
+        // смысл инкапсуляции в том, чтобы объкты были безопасными, т.е. никто не мог напрямую обратиться к ключам объекта и поменять его значения.
+
+    </script>
+</body>
+</html>

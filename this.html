@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // привязываем контекст вызова функции к объекту
+        let user = {
+            name: 'Jhon'
+        }
+
+        function sayName(surname) {
+            console.log(this);
+            console.log(this.name + surname)
+        }
+
+        console.log(sayName.call(user, ' Smith'));
+        console.log(sayName.apply(user, [' Snow', ' Malcovich']));
+
+        function count(number) {
+            return this*number;
+        }
+
+        let double = count.bind(2);
+
+        console.log(double(3));
+        console.log(double(10));
+    </script>
+</body>
+</html>
